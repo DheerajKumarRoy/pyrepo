@@ -1,1 +1,0 @@
-credential = {'Nomad_roy': ['263160@Dk', 'dheerajroy8855@gmail.com', '9368449238']}
