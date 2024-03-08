@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>Navbar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #dcc7c7;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 100%;
+        }
+
+        a:hover {
+            color: lightgrey;
+        }
+
+        h3 {
+            color: rgb(11, 9, 9);
+            text-decoration: none;
+            font-size: 100%;
+        }
+
+        h3:hover {
+            color: rgb(11, 9, 9);
+        }
+
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body style="background-color: burlywood;">
+
+    <nav style="position: fixed; width: 100%;  background-color: #333; padding: 10px;">
+
+        <a href="#">Profile</a>
+        <a href="/images">Images</a>
+        <a href="/videos">Videos</a>
+        <a href="/audios">Audio</a>
+        <a href="/documents">Documents</a>
+        <a href="/about">About</a> 
+
+    </nav>
+    <br>
+    <div class="container"">
+        <h3 style="text-align: center;">{{file}}{{page_num}} </h3><br>
+        <div style="align-content: center;">
+            <a href="/download?filepath={{path+file}}"><button>Download</button></a>
+            <a href="/delete?filepath={{path+file}}&page_num={{page_num}}"><button>Delete</button></a>
+        </div>
+        <iframe src="{{url_for('static',filename=path+file)}}" padding: 1ch;" frameborder="0" width="320" height="450"
+            frameborder="0" allowfullscreen controls>
+        </iframe><br>
+    </div>
+</body>
+
+</html>

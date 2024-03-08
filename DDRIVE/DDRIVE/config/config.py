@@ -1,0 +1,1 @@
+secret_key = 'nally@567'

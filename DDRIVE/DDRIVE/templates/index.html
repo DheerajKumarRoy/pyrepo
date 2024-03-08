@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>Navbar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 100%;
+        }
+        a:hover {
+            color: lightgrey;
+        }
+        .content {
+            padding: 20px;
+        }
+         /* CSS for the floating button */
+         .floating-button {
+            position: fixed; /* Set the position to fixed */
+            bottom: 20px; /* Adjust the distance from the bottom */
+            right: 20px; /* Adjust the distance from the right */
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* CSS for the floating button hover effect */
+        .floating-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body style="background-color: burlywood;">
+
+<nav style="position: fixed; width: 100%;  background-color: #333; padding: 10px;">
+
+    <a href="/profile">Profile</a>
+    <a href="/images">Images</a>
+    <a href="/videos">Videos</a>
+    <a href="/audios">Audio</a>
+    <a href="/#">Documents</a>
+    <a href="/about">About</a>
+
+</nav>
+<br>
+    <div><br>
+        <h2 style="text-align: center;">Images</h2><br>
+        <p style="color: rgb(78, 71, 160); text-align: center;">{{user}}</p>
+        <br>
+
+            {% for file in files %}
+                <a href="/open?file={{url_for('static',filename=path+file)}}">
+                    <img src= "{{url_for('static',filename=image)}}" alt="{{image}}" style="width: 40%; padding: 1ch;" >
+                </a>
+            {% endfor %}
+        </div>
+        <a href="/upform"><button class="floating-button">+</button></a>
+</body>
+</html>
+

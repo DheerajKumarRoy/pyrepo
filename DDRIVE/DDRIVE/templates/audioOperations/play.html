@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>Navbar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: burlywood;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #dcc7c7;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 100%;
+        }
+
+        a:hover {
+            color:  rgb(7, 7, 7);
+        }
+        h3 {
+            color: rgb(7, 7, 7);
+            text-decoration: none;
+            font-size: 100%;
+        }
+
+        h3:hover {
+            color: lightgrey;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        /* CSS for the floating button */
+        .floating-button {
+            position: fixed;
+            /* Set the position to fixed */
+            bottom: 50px;
+            /* Adjust the distance from the bottom */
+            right: 50px;
+            /* Adjust the distance from the right */
+            background-color: #4CAF50;
+            color: white;
+            padding: 30px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: opacity 0.5s;
+        }
+
+        /* CSS for the floating button hover effect */
+        .floating-button:hover {
+            background-color: #45a049;
+        }
+
+        .hidden {
+            opacity: 0;
+        }
+
+        .visible {
+            opacity: 1;
+        }
+
+        .roy {
+            text-align: center;
+            margin-bottom: 10px;
+            transition: opacity 0.5s, margin-top 0.5s;
+            margin-top: 0;
+            /* Initial position */
+        }
+
+        .roy img {
+            width: 60px;
+            vertical-align: middle;
+            margin-right: 0px;
+            padding-top: 10px;
+        }
+
+        .hiddenLogo {
+            opacity: 0;
+            margin-top: -60px;
+            /* Move the logo up */
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav style="position: fixed; width: 100%;  background-color: #333; padding-bottom: 10px; ">
+        <div class="roy" id="royDiv">
+            <a href="/images">
+                <img src="{{url_for('static',filename='images/logo.png')}}" alt="DP" id="logoImg">
+            </a><br>
+        </div>
+        <a href="/profile">Profile</a>
+        <a href="/images">Images</a>
+        <a href="/videos">Videos</a>
+        <a href="/audios">Audio</a>
+        <a href="/documents">Documents</a>
+        <a href="/about">About</a>
+
+    </nav>
+    <br><br><br><br>
+    <div class="container"">
+        
+        <h1 style="text-align: center;">🎧</h1><br>
+        <h3 style="text-align: center;">{{file}}</h3><br>
+        <audio controls>
+            <source src="{{url_for('static',filename=path+file)}}" type="audio/mpeg">
+        </audio>
+
+    </div>
+    <a href="/upform"><button class="floating-button" id="floatingButton">+</button></a>
+
+    <script>
+        var lastScrollTop = 0;
+        var floatingButton = document.getElementById('floatingButton');
+        var royDiv = document.getElementById('royDiv');
+        var logoImg = document.getElementById('logoImg');
+
+        window.addEventListener("scroll", function () {
+            var st = window.pageYOffset || document.documentElement.scrollTop;
+            if (st > lastScrollTop) {
+                // Downscroll code
+                floatingButton.classList.remove('visible');
+                floatingButton.classList.add('hidden');
+                royDiv.classList.remove('visible');
+                royDiv.classList.add('hiddenLogo');
+            } else {
+                // Upscroll code
+                floatingButton.classList.remove('hidden');
+                floatingButton.classList.add('visible');
+                royDiv.classList.remove('hiddenLogo');
+                royDiv.classList.add('visible');
+            }
+            lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+        }, false);
+    </script>
+</body>
+
+</html>
