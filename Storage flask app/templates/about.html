@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>Navbar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: burlywood;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 100%;
+        }
+
+        a:hover {
+            color: lightgrey;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        /* CSS for the floating button */
+        .floating-button {
+            position: fixed;
+            /* Set the position to fixed */
+            bottom: 50px;
+            /* Adjust the distance from the bottom */
+            right: 50px;
+            /* Adjust the distance from the right */
+            background-color: #4CAF50;
+            color: white;
+            padding: 30px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: opacity 0.5s;
+        }
+
+        /* CSS for the floating button hover effect */
+        .floating-button:hover {
+            background-color: #45a049;
+        }
+
+        .hidden {
+            opacity: 0;
+        }
+
+        .visible {
+            opacity: 1;
+        }
+
+        .roy {
+            text-align: center;
+            margin-bottom: 10px;
+            transition: opacity 0.5s, margin-top 0.5s;
+            margin-top: 0;
+            /* Initial position */
+        }
+
+        .roy img {
+            width: 60px;
+            vertical-align: middle;
+            margin-right: 0px;
+            padding-top: 10px;
+        }
+
+        .hiddenLogo {
+            opacity: 0;
+            margin-top: -60px;
+            /* Move the logo up */
+        }
+
+        .paging {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .paging a {
+            text-align: center;
+            color: black;
+
+        }
+
+        .logo-login {
+            text-align: center;
+            margin-bottom: 1px;
+        }
+
+        .logo-login img {
+            width: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+
+<nav style="position: fixed; width: 100%;  background-color: #333; padding-bottom: 10px; ">
+    <div class="roy" id="royDiv">
+        <a href="/images">
+            <img src="{{url_for('static',filename='images/logo.png')}}" alt="DP" id="logoImg">
+        </a><br>
+    </div>
+    <a href="/profile">Profile</a>
+    <a href="/images">Images</a>
+    <a href="/videos">Videos</a>
+    <a href="/audios">Audio</a>
+    <a href="/documents">Documents</a>
+    <a href="/about">About</a>
+
+</nav>
+<br><br><br><br>
+
+<body>
+
+    <header>
+        <h1>About - Dheeraj's Cloud Storage</h1>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>Welcome to Dheeraj's Cloud Storage</h2>
+            <p>Dheeraj's Cloud Storage is your ultimate solution for securely storing and accessing your files from
+                anywhere, anytime. Our platform is designed to provide you with a seamless experience for managing your
+                personal files.</p>
+        </section>
+
+        <section class="section">
+            <h2>Our Mission</h2>
+            <p>At Dheeraj's Cloud Storage, our mission is to empower individuals by offering a reliable and secure cloud
+                storage solution. We believe in simplifying the way you manage your files, ensuring that your data is
+                always safe and accessible.</p>
+        </section>
+
+        <section class="section">
+            <h2>Why Choose Us?</h2>
+            <p>• Secure Storage: We prioritize the security of your data, ensuring that it is encrypted and protected at
+                all times.<br>
+                • Easy Access: Access your files from any device with an internet connection, making it convenient to
+                retrieve your data whenever you need it.<br>
+                • User-Friendly Interface: Our intuitive interface makes it easy for you to upload, organize, and share
+                your files effortlessly.<br>
+                • Reliable Service: Count on us for reliable performance and minimal downtime, ensuring that your files
+                are always available when you need them.</p>
+        </section>
+
+        <section class="section">
+            <h2>Testimonials</h2>
+            <div class="quote">
+                "Dheeraj's Cloud Storage has been a game-changer for me. I no longer worry about losing my important
+                files, thanks to their reliable and secure platform." <br>
+                <span class="author">- John Doe, Satisfied User</span>
+            </div>
+            <div class="quote">
+                "I highly recommend Dheeraj's Cloud Storage to anyone looking for a trustworthy cloud storage solution.
+                The ease of use and peace of mind it provides are unmatched." <br>
+                <span class="author">- Jane Smith, Happy Customer</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or inquiries about our services, feel free to contact us at-</p>
+        </section>
+        <footer>
+            <div class="logo-login">
+                <a href="https://wa.me/919368449238">
+                    <img src="https://www.freepnglogos.com/uploads/whatsapp-png-logo-1.png" alt="wa_logo">
+                </a>
+                <a href="https://www.facebook.com/dhiraj.ray.908">
+                    <img src="https://www.freepnglogos.com/uploads/facebook-logo-f-png-27.png" alt="fb_logo">
+                    <a href="mailto:dheerajroy8855@gmail.com">
+                        <img src="https://www.freepnglogos.com/uploads/logo-gmail-png/logo-gmail-png-gmail-icon-myiconfinder-5.png" alt=" gmail-logo">
+                </a>
+                <br><br>
+            </div>
+        </footer>
+
+</body>
+
+</html>
